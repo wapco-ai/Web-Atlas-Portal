@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Sidebar from "./components/Sidebar";
 
 export const metadata: Metadata = {
   title: "وب اطلس پویا | راهکارهای هوشمند مدیریت شهری",
@@ -20,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body>{children}</body>
+      <body><Sidebar /><main className="site-content">{children}</main></body>
     </html>
   );
 }

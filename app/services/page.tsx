@@ -1,0 +1,3 @@
+/* eslint-disable @next/next/no-img-element */
+import Link from "next/link"; import { services } from "../lib/content";
+export default function Services(){return <><header className="page-hero"><span className="kicker">حوزه‌های تخصصی</span><h1>راهکارهای نرم‌افزاری<br/><em>برای شهرهای هوشمندتر</em></h1><p>محصولاتی شکل‌گرفته از شناخت مسئله، تجربه اجرایی و فناوری روز.</p></header><section className="service-list section-shell">{services.map((s,i)=><Link href={s.href} className="service-row" key={s.slug}><span className="service-index">۰{i+1}</span><img src={s.icon} alt=""/><div><small>{s.short}</small><h2>{s.title}</h2><p>{s.text}</p></div><b>←</b></Link>)}</section></>}
