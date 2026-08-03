@@ -1,2 +1,2 @@
-import Link from "next/link";import {gisSolutions} from "../lib/content";
+import Link from "../components/SiteLink";import {gisSolutions} from "../lib/content";
 export default function Gis(){return <><header className="page-hero compact"><span className="eyebrow">راهکارهای مکانی / GIS</span><h1>مکان، لایه مشترک همه تصمیم‌ها</h1><p>راهکارهای مکانی وب اطلس پویا اطلاعات سازمان را روی نقشه به یک ابزار تحلیل و مدیریت تبدیل می‌کنند.</p></header><section className="section-shell gis-catalog">{gisSolutions.map((g,i)=><Link href={`/gis/${g.slug}`} className="gis-card reveal" key={g.slug}><i>{g.icon}</i><small>0{i+1}</small><h2>{g.title}</h2><p>{g.desc}</p><b>مشاهده راهکار ←</b></Link>)}</section></>}

@@ -1,2 +1,2 @@
-import Link from "next/link";
+import Link from "./SiteLink";
 export default function Footer(){return <footer className="footer reveal"><div><strong>شرکت وب اطلس پویا</strong><p>طراحی و توسعه راهکارهای مبتنی بر وب و GIS برای مدیریت هوشمند سازمان‌ها و خدمات شهری.</p></div><div><b>دسترسی سریع</b><Link href="/about">معرفی شرکت</Link><Link href="/customers">مشتریان</Link><Link href="/products">محصولات</Link></div><div><b>راهکارها</b><Link href="/gis">راهکارهای مکانی</Link><Link href="/startups">استارتاپ‌ها</Link><Link href="/contact">ثبت سفارش</Link></div><div><b>ارتباط</b><a href="mailto:info@wapco.ir">info@wapco.ir</a><span>ایران، مشهد</span></div><small>© ۱۴۰۵ تمامی حقوق برای وب اطلس پویا محفوظ است.</small></footer>}
