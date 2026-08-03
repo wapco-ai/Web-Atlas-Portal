@@ -6,8 +6,8 @@
       "_rolldown-runtime-S-ySWqyJ.js"
     ]
   },
-  "_navigation-BGchb3t9.js": {
-    "file": "assets/navigation-BGchb3t9.js",
+  "_navigation-qPn-od8g.js": {
+    "file": "assets/navigation-qPn-od8g.js",
     "name": "navigation",
     "imports": [
       "_rolldown-runtime-S-ySWqyJ.js",
@@ -33,7 +33,7 @@
     "name": "url-utils"
   },
   "app/components/Carousel.tsx": {
-    "file": "assets/Carousel-zMG6f8Uo.js",
+    "file": "assets/Carousel-D-0ax3f-.js",
     "name": "Carousel",
     "src": "app/components/Carousel.tsx",
     "isDynamicEntry": true,
@@ -43,8 +43,18 @@
       "node_modules/vinext/dist/shims/link.js"
     ]
   },
+  "app/components/GitHubPagesNavigation.tsx": {
+    "file": "assets/GitHubPagesNavigation-CcoJmUbB.js",
+    "name": "GitHubPagesNavigation",
+    "src": "app/components/GitHubPagesNavigation.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-S-ySWqyJ.js",
+      "_framework-B8WyT5R3.js"
+    ]
+  },
   "app/components/ServiceGlobe.tsx": {
-    "file": "assets/ServiceGlobe-Dc85pZT6.js",
+    "file": "assets/ServiceGlobe-CDx5TRwV.js",
     "name": "ServiceGlobe",
     "src": "app/components/ServiceGlobe.tsx",
     "isDynamicEntry": true,
@@ -55,7 +65,7 @@
     ]
   },
   "app/components/Sidebar.tsx": {
-    "file": "assets/Sidebar-Ct3uO-X2.js",
+    "file": "assets/Sidebar-XX3Z3lP6.js",
     "name": "Sidebar",
     "src": "app/components/Sidebar.tsx",
     "isDynamicEntry": true,
@@ -63,22 +73,22 @@
       "_rolldown-runtime-S-ySWqyJ.js",
       "_framework-B8WyT5R3.js",
       "node_modules/vinext/dist/shims/link.js",
-      "_navigation-BGchb3t9.js"
+      "_navigation-qPn-od8g.js"
     ]
   },
   "app/components/SiteEffects.tsx": {
-    "file": "assets/SiteEffects-2yewjwev.js",
+    "file": "assets/SiteEffects-CEWaXnp2.js",
     "name": "SiteEffects",
     "src": "app/components/SiteEffects.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-S-ySWqyJ.js",
       "_framework-B8WyT5R3.js",
-      "_navigation-BGchb3t9.js"
+      "_navigation-qPn-od8g.js"
     ]
   },
   "node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "assets/layout-segment-context-CT0Flp1f.js",
+    "file": "assets/layout-segment-context-biV4wHdY.js",
     "name": "layout-segment-context",
     "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -89,7 +99,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/link.js": {
-    "file": "assets/link-BHelYvEH.js",
+    "file": "assets/link-CYH8PKSm.js",
     "name": "link",
     "src": "node_modules/vinext/dist/shims/link.js",
     "isDynamicEntry": true,
@@ -105,7 +115,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/router.js": {
-    "file": "assets/router-CJNxiQk4.js",
+    "file": "assets/router-CPUW7GXz.js",
     "name": "router",
     "src": "node_modules/vinext/dist/shims/router.js",
     "isDynamicEntry": true,
@@ -121,7 +131,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "assets/index-C0O_4q4R.js",
+    "file": "assets/index-jGNNw6-s.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
@@ -135,6 +145,7 @@
       "app/components/SiteEffects.tsx",
       "node_modules/vinext/dist/shims/layout-segment-context.js",
       "virtual:vinext-app-browser-entry",
+      "app/components/GitHubPagesNavigation.tsx",
       "app/components/Carousel.tsx",
       "app/components/Sidebar.tsx",
       "app/components/ServiceGlobe.tsx",
