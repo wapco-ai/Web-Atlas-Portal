@@ -3,6 +3,7 @@ import "./globals.css";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import SiteEffects from "./components/SiteEffects";
+import GitHubPagesNavigation from "./components/GitHubPagesNavigation";
 
 export const metadata: Metadata = {
   title: "وب اطلس پویا | راهکارهای هوشمند مدیریت شهری",
@@ -23,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body><Sidebar /><main className="site-content"><div className="page-transition">{children}</div><Footer /></main><SiteEffects /></body>
+      <body><Sidebar /><main className="site-content"><div className="page-transition"> <GitHubPagesNavigation /> {children}</div><Footer /></main><SiteEffects /></body>
     </html>
   );
 }
