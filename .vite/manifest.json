@@ -1,0 +1,144 @@
+{
+  "_framework-B8WyT5R3.js": {
+    "file": "assets/framework-B8WyT5R3.js",
+    "name": "framework",
+    "imports": [
+      "_rolldown-runtime-S-ySWqyJ.js"
+    ]
+  },
+  "_navigation-BGchb3t9.js": {
+    "file": "assets/navigation-BGchb3t9.js",
+    "name": "navigation",
+    "imports": [
+      "_rolldown-runtime-S-ySWqyJ.js",
+      "_framework-B8WyT5R3.js",
+      "_readonly-url-search-params-BRv7ewS0.js",
+      "_url-utils-BAkPrQqo.js"
+    ]
+  },
+  "_readonly-url-search-params-BRv7ewS0.js": {
+    "file": "assets/readonly-url-search-params-BRv7ewS0.js",
+    "name": "readonly-url-search-params",
+    "imports": [
+      "_rolldown-runtime-S-ySWqyJ.js",
+      "_framework-B8WyT5R3.js"
+    ]
+  },
+  "_rolldown-runtime-S-ySWqyJ.js": {
+    "file": "assets/rolldown-runtime-S-ySWqyJ.js",
+    "name": "rolldown-runtime"
+  },
+  "_url-utils-BAkPrQqo.js": {
+    "file": "assets/url-utils-BAkPrQqo.js",
+    "name": "url-utils"
+  },
+  "app/components/Carousel.tsx": {
+    "file": "assets/Carousel-zMG6f8Uo.js",
+    "name": "Carousel",
+    "src": "app/components/Carousel.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-S-ySWqyJ.js",
+      "_framework-B8WyT5R3.js",
+      "node_modules/vinext/dist/shims/link.js"
+    ]
+  },
+  "app/components/ServiceGlobe.tsx": {
+    "file": "assets/ServiceGlobe-Dc85pZT6.js",
+    "name": "ServiceGlobe",
+    "src": "app/components/ServiceGlobe.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-S-ySWqyJ.js",
+      "_framework-B8WyT5R3.js",
+      "node_modules/vinext/dist/shims/link.js"
+    ]
+  },
+  "app/components/Sidebar.tsx": {
+    "file": "assets/Sidebar-Ct3uO-X2.js",
+    "name": "Sidebar",
+    "src": "app/components/Sidebar.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-S-ySWqyJ.js",
+      "_framework-B8WyT5R3.js",
+      "node_modules/vinext/dist/shims/link.js",
+      "_navigation-BGchb3t9.js"
+    ]
+  },
+  "app/components/SiteEffects.tsx": {
+    "file": "assets/SiteEffects-2yewjwev.js",
+    "name": "SiteEffects",
+    "src": "app/components/SiteEffects.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-S-ySWqyJ.js",
+      "_framework-B8WyT5R3.js",
+      "_navigation-BGchb3t9.js"
+    ]
+  },
+  "node_modules/vinext/dist/shims/layout-segment-context.js": {
+    "file": "assets/layout-segment-context-CT0Flp1f.js",
+    "name": "layout-segment-context",
+    "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-S-ySWqyJ.js",
+      "virtual:vinext-app-browser-entry",
+      "_framework-B8WyT5R3.js"
+    ]
+  },
+  "node_modules/vinext/dist/shims/link.js": {
+    "file": "assets/link-BHelYvEH.js",
+    "name": "link",
+    "src": "node_modules/vinext/dist/shims/link.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-S-ySWqyJ.js",
+      "virtual:vinext-app-browser-entry",
+      "_framework-B8WyT5R3.js",
+      "_readonly-url-search-params-BRv7ewS0.js",
+      "_url-utils-BAkPrQqo.js"
+    ],
+    "dynamicImports": [
+      "node_modules/vinext/dist/shims/router.js"
+    ]
+  },
+  "node_modules/vinext/dist/shims/router.js": {
+    "file": "assets/router-CJNxiQk4.js",
+    "name": "router",
+    "src": "node_modules/vinext/dist/shims/router.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-S-ySWqyJ.js",
+      "virtual:vinext-app-browser-entry",
+      "_framework-B8WyT5R3.js",
+      "node_modules/vinext/dist/shims/link.js",
+      "_url-utils-BAkPrQqo.js"
+    ],
+    "dynamicImports": [
+      "_framework-B8WyT5R3.js"
+    ]
+  },
+  "virtual:vinext-app-browser-entry": {
+    "file": "assets/index-C0O_4q4R.js",
+    "name": "index",
+    "src": "virtual:vinext-app-browser-entry",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-S-ySWqyJ.js",
+      "_framework-B8WyT5R3.js",
+      "_readonly-url-search-params-BRv7ewS0.js",
+      "_url-utils-BAkPrQqo.js"
+    ],
+    "dynamicImports": [
+      "app/components/SiteEffects.tsx",
+      "node_modules/vinext/dist/shims/layout-segment-context.js",
+      "virtual:vinext-app-browser-entry",
+      "app/components/Carousel.tsx",
+      "app/components/Sidebar.tsx",
+      "app/components/ServiceGlobe.tsx",
+      "node_modules/vinext/dist/shims/link.js"
+    ]
+  }
+}
