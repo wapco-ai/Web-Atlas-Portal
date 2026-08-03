@@ -18,12 +18,12 @@ const editableExtensions = new Set([
 function addRepositoryPath(content) {
   return content
     .replace(
-      /(["'])\/(?=[A-Za-z0-9._~-])/g,
+      /(["'])\/(?!\/|Web-Atlas-Portal\/)(?=[A-Za-z0-9._~-])/g,
       (match, quote) => `${quote}${repositoryPath}/`,
     )
     .replace(
-      /url\(\s*\/(?!\/|Web-Atlas-Portal\/)/gi,
-      `url(${repositoryPath}/`,
+      /url\(\s*(["']?)\/(?!\/|Web-Atlas-Portal\/)/gi,
+      (match, quote) => `url(${quote}${repositoryPath}/`,
     );
 }
 
