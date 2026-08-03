@@ -1,33 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from "next/link";
-import ServiceGlobe from "./components/ServiceGlobe";
-import { services } from "./lib/content";
-
-export default function Home() {
-  return (
-    <>
-      <section className="hero">
-        <div className="hero-copy">
-          <span className="eyebrow">۱۵ سال تجربه در فناوری شهری</span>
-          <h1>فناوری برای<br /><em>زندگی بهتر شهرها</em></h1>
-          <p>سامانه‌های تخصصی و داده‌محور برای سازمان‌هایی که هر تصمیم آن‌ها بر کیفیت زندگی شهروندان اثر می‌گذارد.</p>
-          <div className="actions"><Link className="button primary" href="/services">مشاهده راهکارها ←</Link><Link className="button ghost" href="/about">داستان ما</Link></div>
-          <div className="metrics"><div><strong>۱۵+</strong><span>سال تجربه</span></div><div><strong>۴</strong><span>حوزه تخصصی</span></div><div><strong>۲۰+</strong><span>پروژه سازمانی</span></div></div>
-        </div>
-        <ServiceGlobe />
-      </section>
-
-      <section className="home-intro section-shell">
-        <div><span className="kicker">وب اطلس پویا در یک نگاه</span><h2>از مسئله واقعی<br /><em>تا راهکار قابل اتکا</em></h2></div>
-        <div><p>ما دانش نرم‌افزار را با شناخت عمیق خدمات شهری ترکیب می‌کنیم تا فرآیندهای پیچیده، ساده‌تر و تصمیم‌ها دقیق‌تر شوند.</p><Link className="text-link" href="/about">بیشتر درباره ما ←</Link></div>
-      </section>
-
-      <section className="home-services section-shell">
-        <div className="section-title"><div><span className="kicker">حوزه‌های تخصصی</span><h2>راهکارهای ما</h2></div><Link className="text-link" href="/services">همه خدمات ←</Link></div>
-        <div className="mini-service-grid">{services.map((service) => <Link href={service.href} className="mini-service" key={service.slug}><img src={service.icon} alt="" /><span>{service.short}</span><h3>{service.title}</h3><b>←</b></Link>)}</div>
-      </section>
-
-      <section className="home-cta"><span>یک مسئله شهری برای حل‌کردن دارید؟</span><h2>بیایید راه‌حل مناسب را با هم بسازیم.</h2><Link className="button primary" href="/contact">شروع گفت‌وگو ←</Link></section>
-    </>
-  );
-}
+import Link from "next/link";import ServiceGlobe from "./components/ServiceGlobe";import Carousel from "./components/Carousel";import {gisSolutions,products,services} from "./lib/content";
+export default function Home(){return <><section className="hero"><div className="hero-copy reveal"><span className="eyebrow">راهکارهای مبتنی بر وب و GIS</span><h1>داده، فناوری و مکان؛<br/><em>برای مدیریت هوشمند</em></h1><p>شرکت وب اطلس پویا با تکیه بر تجربه تخصصی در تولید نرم‌افزارهای سازمانی، سامانه‌های اطلاعات مکانی و راهکارهای مدیریت شهری فعالیت می‌کند.</p><div className="actions"><Link className="button primary" href="/products">مشاهده محصولات ←</Link><Link className="button ghost" href="/about">معرفی شرکت</Link></div><div className="metrics"><div><strong>۱۵+</strong><span>سال تجربه</span></div><div><strong>۴</strong><span>محصول تخصصی</span></div><div><strong>۷</strong><span>حوزه GIS</span></div></div></div><ServiceGlobe/></section><Carousel/>
+<section className="section-shell intro-grid reveal"><div><span className="kicker">شرکت وب اطلس پویا</span><h2>تخصص نرم‌افزار،<br/><em>شناخت فرایند، قدرت مکان</em></h2></div><div><p>ماموریت ما ارائه سامانه‌هایی است که اطلاعات را منسجم، فرایندها را شفاف و تصمیم‌گیری را سریع‌تر می‌کنند. محصولات ما نتیجه شناخت نزدیک از نیازهای واقعی سازمان‌هاست.</p><Link className="text-link" href="/about">داستان و ساختار شرکت ←</Link></div><div className="stat-card"><b>راهکار یکپارچه</b><span>تحلیل · طراحی · توسعه · استقرار · پشتیبانی</span></div></section>
+<section className="section-shell dark-pattern"><div className="section-title"><div><span className="kicker">محصولات تخصصی</span><h2>ساخته‌شده برای فرایند واقعی</h2></div><Link href="/products" className="text-link">همه محصولات ←</Link></div><div className="product-mosaic">{products.map((p,i)=><Link href={`/products/${p.slug}`} className={`product-tile reveal p${i+1}`} key={p.slug}><img src={p.image} alt=""/><div><small>{p.subtitle}</small><h3>{p.title}</h3><span>مشاهده محصول ←</span></div></Link>)}</div></section>
+<section className="section-shell"><div className="section-title"><div><span className="kicker">راهکارهای مکانی</span><h2>GIS برای هر حوزه</h2></div><Link href="/gis" className="text-link">مشاهده همه ←</Link></div><div className="gis-wheel">{gisSolutions.map((g,i)=><Link href={`/gis/${g.slug}`} className="gis-chip reveal" key={g.slug}><i>{g.icon}</i><b>{g.title}</b><small>0{i+1}</small></Link>)}</div></section>
+<section className="section-shell service-band">{services.map(s=><article className="reveal" key={s.slug}><img src={s.icon} alt=""/><div><small>{s.short}</small><h3>{s.title}</h3></div></article>)}</section><section className="home-cta reveal"><span>برای معرفی محصول، مشاوره یا ثبت سفارش</span><h2>مسئله شما، نقطه شروع راهکار بعدی ماست.</h2><Link className="button primary" href="/contact">گفت‌وگو با ما ←</Link></section></>}

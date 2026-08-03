@@ -1,16 +1,5 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-
-const items = [["/", "خانه", "⌂"], ["/services", "خدمات", "◈"], ["/projects", "پروژه‌ها", "▦"], ["/startups", "محصولات", "✦"], ["/about", "درباره ما", "◉"], ["/contact", "تماس", "✉"]];
-
-export default function Sidebar() {
-  const pathname = usePathname(); const [open, setOpen] = useState(false);
-  return <><button className="mobile-menu" onClick={() => setOpen(!open)} aria-label="نمایش منو">{open ? "×" : "☰"}</button><aside className={`sidebar ${open ? "open" : ""}`}>
-    <Link className="side-brand" href="/" onClick={() => setOpen(false)}><img src="/assets/logo.png" alt="" /><span><strong>وب اطلس پویا</strong><small>راهکارهای هوشمند شهری</small></span></Link>
-    <nav>{items.map(([href,label,icon]) => <Link key={href} href={href} onClick={() => setOpen(false)} className={pathname === href || (href !== "/" && pathname.startsWith(href)) ? "active" : ""}><i>{icon}</i><span>{label}</span></Link>)}</nav>
-    <div className="side-bottom"><Link href="/contact">گفت‌وگو با ما <b>←</b></Link><small>© ۱۴۰۵ وب اطلس پویا</small></div>
-  </aside><div className={`menu-backdrop ${open ? "show" : ""}`} onClick={() => setOpen(false)} /> </>;
-}
+import Link from "next/link";import {usePathname} from "next/navigation";import {useState} from "react";
+const groups=[{href:"/",label:"خانه",icon:"⌂"},{href:"/about",label:"درباره ما",icon:"◉",children:[["/about","معرفی"],["/customers","مشتریان"]]},{href:"/products",label:"محصولات",icon:"▦",children:[["/products/mahar","سامانه مهار"],["/products/meraj","سامانه رضوان"],["/products/hami","سامانه حامی"],["/products/royesh","سامانه رویش"]]},{href:"/gis",label:"راهکارهای مکانی",icon:"◎"},{href:"/startups",label:"استارتاپ‌ها",icon:"✦"},{href:"/projects",label:"پروژه‌ها",icon:"◇"},{href:"/contact",label:"تماس و سفارش",icon:"✉"}];
+export default function Sidebar(){const path=usePathname(),[open,setOpen]=useState(false),[expanded,setExpanded]=useState<string[]>(["/about","/products"]);const toggle=(h:string)=>setExpanded(v=>v.includes(h)?v.filter(x=>x!==h):[...v,h]);return <><button className="mobile-menu" onClick={()=>setOpen(true)} aria-label="نمایش منو">☰</button><aside className={`sidebar ${open?"open":""}`}><Link className="side-brand" href="/" onClick={()=>setOpen(false)}><img src="/assets/logo.png" alt=""/><span><strong>وب اطلس پویا</strong><small>راهکارهای مبتنی بر وب و GIS</small></span></Link><nav>{groups.map(g=><div className="nav-group" key={g.href}><div className={`nav-main ${path===g.href||g.href!=="/"&&path.startsWith(g.href)?"active":""}`}><Link href={g.href} onClick={()=>setOpen(false)}><i>{g.icon}</i><span>{g.label}</span></Link>{g.children&&<button aria-label="زیرمنو" onClick={()=>toggle(g.href)}>⌄</button>}</div>{g.children&&<div className={`subnav ${expanded.includes(g.href)?"expanded":""}`}>{g.children.map(([h,l])=><Link href={h} key={h} onClick={()=>setOpen(false)} className={path===h?"active":""}>{l}</Link>)}</div>}</div>)}</nav><div className="side-bottom"><Link href="/contact">شروع همکاری <b>←</b></Link><small>info@wapco.ir</small></div></aside><div className={`menu-backdrop ${open?"show":""}`} onClick={()=>setOpen(false)}/></>}

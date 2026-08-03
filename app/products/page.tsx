@@ -1,0 +1,3 @@
+/* eslint-disable @next/next/no-img-element */
+import Link from "next/link";import {products} from "../lib/content";
+export default function Products(){return <><header className="page-hero compact"><span className="eyebrow">محصولات وب اطلس پویا</span><h1>سامانه‌های تخصصی سازمانی</h1><p>چهار محصول برای مدیریت یکپارچه عملیات آتش‌نشانی، آرامستان‌ها، حمل‌ونقل و کشاورزی.</p></header><section className="section-shell product-list">{products.map((p,i)=><Link href={`/products/${p.slug}`} className="product-row-card reveal" key={p.slug}><img src={p.image} alt=""/><div><small>0{i+1} · {p.subtitle}</small><h2>{p.title}</h2><p>{p.desc}</p><b>بررسی محصول ←</b></div></Link>)}</section></>}
