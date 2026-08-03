@@ -15,29 +15,10 @@ const editableExtensions = new Set([
   ".webmanifest",
 ]);
 
-const excludedPrefixes = [
-  `${repositoryPath}/`,
-  "//",
-  "/http:",
-  "/https:",
-  "/mailto:",
-  "/tel:",
-  "/data:",
-  "/#",
-];
-
 function addRepositoryPath(content) {
   return content.replace(
-    /(["'(=:\s])\/(?!\/)([^"'()\s<>]*)/g,
-    (match, prefix, path) => {
-      const fullPath = `/${path}`;
-
-      if (excludedPrefixes.some((item) => fullPath.startsWith(item))) {
-        return match;
-      }
-
-      return `${prefix}${repositoryPath}${fullPath}`;
-    },
+    /(["'])\/(?=[A-Za-z0-9._~-]|(?:\1))/g,
+    (match, quote) => `${quote}${repositoryPath}/`,
   );
 }
 
@@ -67,8 +48,6 @@ async function processDirectory(directory) {
 }
 
 await processDirectory(outputDirectory);
-
-/* Prevent GitHub Pages from applying Jekyll processing. */
 await writeFile(join(outputDirectory, ".nojekyll"), "", "utf8");
 
 console.log("");
