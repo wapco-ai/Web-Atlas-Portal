@@ -272,11 +272,11 @@ export default function Gis() {
       </header>
 
       <section className="gis3d-stage">
-        {active < count + 1 && (
+        {active < count - 1 && (
           <button
             className="gis3d-nav gis3d-left"
             aria-label="قبلی"
-            onClick={() => setActive((i) => i - 1)}
+            onClick={() => setActive((i) => i + 1)}
           >
             <svg
               width="22"
