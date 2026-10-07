@@ -1,7 +1,148 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from "./components/SiteLink";import ServiceGlobe from "./components/ServiceGlobe";import Carousel from "./components/Carousel";import {gisSolutions,products,services} from "./lib/content";
-export default function Home(){return <><section className="hero"><div className="hero-copy reveal"><span className="eyebrow">راهکارهای مبتنی بر وب و GIS</span><h1>داده، فناوری و مکان؛<br/><em>برای مدیریت هوشمند</em></h1><p>شرکت وب اطلس پویا با تکیه بر تجربه تخصصی در تولید نرم‌افزارهای سازمانی، سامانه‌های اطلاعات مکانی و راهکارهای مدیریت شهری فعالیت می‌کند.</p><div className="actions"><Link className="button primary" href="/products">مشاهده محصولات ←</Link><Link className="button ghost" href="/about">معرفی شرکت</Link></div><div className="metrics"><div><strong>۱۵+</strong><span>سال تجربه</span></div><div><strong>۴</strong><span>محصول تخصصی</span></div><div><strong>۷</strong><span>حوزه GIS</span></div></div></div><ServiceGlobe/></section><Carousel/>
-<section className="section-shell intro-grid reveal"><div><span className="kicker">شرکت وب اطلس پویا</span><h2>تخصص نرم‌افزار،<br/><em>شناخت فرایند، قدرت مکان</em></h2></div><div><p>ماموریت ما ارائه سامانه‌هایی است که اطلاعات را منسجم، فرایندها را شفاف و تصمیم‌گیری را سریع‌تر می‌کنند. محصولات ما نتیجه شناخت نزدیک از نیازهای واقعی سازمان‌هاست.</p><Link className="text-link" href="/about">داستان و ساختار شرکت ←</Link></div><div className="stat-card"><b>راهکار یکپارچه</b><span>تحلیل · طراحی · توسعه · استقرار · پشتیبانی</span></div></section>
-<section className="section-shell dark-pattern"><div className="section-title"><div><span className="kicker">محصولات تخصصی</span><h2>ساخته‌شده برای فرایند واقعی</h2></div><Link href="/products" className="text-link">همه محصولات ←</Link></div><div className="product-mosaic">{products.map((p,i)=><Link href={`/products/${p.slug}`} className={`product-tile reveal p${i+1}`} key={p.slug}><img src={p.image} alt=""/><div><small>{p.subtitle}</small><h3>{p.title}</h3><span>مشاهده محصول ←</span></div></Link>)}</div></section>
-<section className="section-shell"><div className="section-title"><div><span className="kicker">راهکارهای مکانی</span><h2>GIS برای هر حوزه</h2></div><Link href="/gis" className="text-link">مشاهده همه ←</Link></div><div className="gis-wheel">{gisSolutions.map((g,i)=><Link href={`/gis/${g.slug}`} className="gis-chip reveal" key={g.slug}><i>{g.icon}</i><b>{g.title}</b><small>0{i+1}</small></Link>)}</div></section>
-<section className="section-shell service-band">{services.map(s=><article className="reveal" key={s.slug}><img src={s.icon} alt=""/><div><small>{s.short}</small><h3>{s.title}</h3></div></article>)}</section><section className="home-cta reveal"><span>برای معرفی محصول، مشاوره یا ثبت سفارش</span><h2>مسئله شما، نقطه شروع راهکار بعدی ماست.</h2><Link className="button primary" href="/contact">گفت‌وگو با ما ←</Link></section></>}
+import Link from "./components/SiteLink";
+import ServiceGlobe from "./components/ServiceGlobe";
+import Carousel from "./components/Carousel";
+import Gis3DChip from "./components/Gis3DChip";
+import ServiceCard3D from "./components/ServiceCard3D";
+import { gisSolutions, products, services } from "./lib/content";
+
+export default function Home() {
+  return (
+    <>
+      <section className="hero">
+        <div className="hero-copy reveal">
+          <span className="eyebrow">راهکارهای مبتنی بر وب و GIS</span>
+          <h1>
+            داده، فناوری و مکان؛
+            <br />
+            <em>برای مدیریت هوشمند</em>
+          </h1>
+          <p>
+            شرکت وب اطلس پویا با تکیه بر تجربه تخصصی در تولید نرم‌افزارهای سازمانی،
+            سامانه‌های اطلاعات مکانی و راهکارهای مدیریت شهری فعالیت می‌کند.
+          </p>
+          <div className="actions">
+            <Link className="button primary" href="/products">
+              مشاهده محصولات ←
+            </Link>
+            <Link className="button ghost" href="/about">
+              معرفی شرکت
+            </Link>
+          </div>
+          <div className="metrics">
+            <div>
+              <strong>۱۵+</strong>
+              <span>سال تجربه</span>
+            </div>
+            <div>
+              <strong>۴</strong>
+              <span>محصول تخصصی</span>
+            </div>
+            <div>
+              <strong>۷</strong>
+              <span>حوزه GIS</span>
+            </div>
+          </div>
+        </div>
+        <ServiceGlobe />
+      </section>
+
+      <Carousel />
+
+      <section className="section-shell intro-grid reveal">
+        <div>
+          <span className="kicker">شرکت وب اطلس پویا</span>
+          <h2>
+            تخصص نرم‌افزار،
+            <br />
+            <em>شناخت فرایند، قدرت مکان</em>
+          </h2>
+        </div>
+        <div>
+          <p>
+            ماموریت ما ارائه سامانه‌هایی است که اطلاعات را منسجم، فرایندها را شفاف و
+            تصمیم‌گیری را سریع‌تر می‌کنند. محصولات ما نتیجه شناخت نزدیک از نیازهای
+            واقعی سازمان‌هاست.
+          </p>
+          <Link className="text-link" href="/about">
+            داستان و ساختار شرکت ←
+          </Link>
+        </div>
+        <div className="stat-card">
+          <b>راهکار یکپارچه</b>
+          <span>تحلیل · طراحی · توسعه · استقرار · پشتیبانی</span>
+        </div>
+      </section>
+
+      <section className="section-shell dark-pattern">
+        <div className="section-title">
+          <div>
+            <span className="kicker">محصولات تخصصی</span>
+            <h2>ساخته‌شده برای فرایند واقعی</h2>
+          </div>
+          <Link href="/products" className="text-link">
+            همه محصولات ←
+          </Link>
+        </div>
+        <div className="product-mosaic">
+          {products.map((p, i) => (
+            <Link
+              href={`/products/${p.slug}`}
+              className={`product-tile reveal p${i + 1}`}
+              key={p.slug}
+            >
+              <img src={p.image} alt="" />
+              <div>
+                <small>{p.subtitle}</small>
+                <h3>{p.title}</h3>
+                <span>مشاهده محصول ←</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-shell">
+        <div className="section-title">
+          <div>
+            <span className="kicker">راهکارهای مکانی</span>
+            <h2>GIS برای هر حوزه</h2>
+          </div>
+          <Link href="/gis" className="text-link">
+            مشاهده همه ←
+          </Link>
+        </div>
+        <div className="gis-wheel" style={{ gap: "26px", rowGap: "26px" }}>
+          {gisSolutions.map((g, i) => (
+            <Gis3DChip
+              key={g.slug}
+              href={`/gis/${g.slug}`}
+              icon={g.icon}
+              title={g.title}
+              index={i}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="section-shell service-band">
+        {services.map((s) => (
+          <ServiceCard3D
+            key={s.slug}
+            icon={s.icon}
+            short={s.short}
+            title={s.title}
+          />
+        ))}
+      </section>
+
+      <section className="home-cta reveal">
+        <span>برای معرفی محصول، مشاوره یا ثبت سفارش</span>
+        <h2>مسئله شما، نقطه شروع راهکار بعدی ماست.</h2>
+        <Link className="button primary" href="/contact">
+          گفت‌وگو با ما ←
+        </Link>
+      </section>
+    </>
+  );
+}
