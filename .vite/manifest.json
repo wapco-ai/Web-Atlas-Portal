@@ -85,7 +85,7 @@
     ]
   },
   "app/components/Sidebar.tsx": {
-    "file": "assets/Sidebar-BpJtuG2C.js",
+    "file": "assets/Sidebar-CTZ4ureA.js",
     "name": "Sidebar",
     "src": "app/components/Sidebar.tsx",
     "isDynamicEntry": true,
@@ -140,7 +140,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "assets/layout-segment-context-aA3aUIeU.js",
+    "file": "assets/layout-segment-context-tbMxhjGK.js",
     "name": "layout-segment-context",
     "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -151,7 +151,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "assets/index-CkBM-LR4.js",
+    "file": "assets/index-XBeDttYR.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
