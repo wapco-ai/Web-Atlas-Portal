@@ -45,6 +45,7 @@ export default function Sidebar() {
   const path = norm(rawPath);
   const [open, setOpen] = useState(false);
 
+  // Start with empty array (closed by default)
   const [expanded, setExpanded] = useState<string[]>(() => {
     if (typeof window === "undefined") return [];
     try {
@@ -122,11 +123,39 @@ export default function Sidebar() {
             return (
               <div className="nav-group" key={g.href}>
                 <div className={`nav-main ${active ? "active" : ""}`}>
-                  <Link href={g.href} onClick={() => setOpen(false)}>
-                    <i>{g.icon}</i>
-                    <span>{g.label}</span>
-                  </Link>
+                  {/* IF it has children, use a <button> to only toggle the menu */}
+                  {g.children ? (
+                    <button
+                      type="button"
+                      className="nav-title-btn"
+                      onClick={() => toggle(g.href)}
+                      style={{
+                        flex: 1,
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "14px",
+                        background: "transparent",
+                        border: 0,
+                        cursor: "pointer",
+                        color: active ? "#fff" : "#8fa5ae",
+                        padding: 0,
+                        textAlign: "right",
+                      }}
+                    >
+                      <i style={{ color: active ? "var(--green)" : "#4e7180" }}>
+                        {g.icon}
+                      </i>
+                      <span>{g.label}</span>
+                    </button>
+                  ) : (
+                    /* IF no children, use normal <Link> to navigate */
+                    <Link href={g.href} onClick={() => setOpen(false)}>
+                      <i>{g.icon}</i>
+                      <span>{g.label}</span>
+                    </Link>
+                  )}
 
+                  {/* The arrow toggle button (only if has children) */}
                   {g.children && (
                     <button
                       type="button"
