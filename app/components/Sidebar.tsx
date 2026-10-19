@@ -46,12 +46,12 @@ export default function Sidebar() {
   const [open, setOpen] = useState(false);
 
   const [expanded, setExpanded] = useState<string[]>(() => {
-    if (typeof window === "undefined") return ["/about", "/products"];
+    if (typeof window === "undefined") return [];
     try {
       const raw = sessionStorage.getItem(EXPANDED_KEY);
-      return raw ? JSON.parse(raw) : ["/about", "/products"];
+      return raw ? JSON.parse(raw) : [];
     } catch {
-      return ["/about", "/products"];
+      return [];
     }
   });
 
@@ -94,7 +94,7 @@ export default function Sidebar() {
   return (
     <>
       <button
-        className="mobile-menu"
+        className={`mobile-menu ${open ? "hide" : ""}`}
         onClick={() => setOpen(true)}
         aria-label="نمایش منو"
       >
